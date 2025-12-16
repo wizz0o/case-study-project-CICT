@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Computer Parts Inventory</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-wrapper">
+
+    <!-- Add new part button -->
+    <ion-button color="success" expand="block" (click)="openAddModal()">
+      Add New Part
+    </ion-button>
+
+    <!-- List of parts -->
+    <ion-list>
+      <div class="item-wrapper" *ngFor="let part of parts">
+        <ion-item detail>
+          <ion-label>
+            <h2>{{ part.name }}</h2>
+            <p>Type: {{ part.type }} | Quantity: {{ part.quantity }}</p>
+          </ion-label>
+          <ion-buttons slot="end">
+            <ion-button color="medium" (click)="openEditModal(part)">Edit</ion-button>
+            <ion-button color="danger" (click)="deletePart(part.id)">Delete</ion-button>
+          </ion-buttons>
+        </ion-item>
+      </div>
+    </ion-list>
+
+  </div>
+</ion-content>

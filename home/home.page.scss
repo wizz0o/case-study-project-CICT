@@ -1,0 +1,112 @@
+/* --------------------------------------------- */
+/* Toolbar */
+ion-toolbar {
+  --background: #007a33; /* Celtics green */
+  color: white;
+  text-align: center;
+}
+
+/* --------------------------------------------- */
+/* Content wrapper with gradient background */
+ion-content {
+  display: flex;
+  justify-content: flex-start;
+  padding: 16px;
+  background: linear-gradient(to bottom, #000000, #555555);
+  min-height: 100vh;
+}
+
+/* Center all content */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* --------------------------------------------- */
+/* List container */
+ion-list {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* --------------------------------------------- */
+/* Keyframes for fade-in + slide-up */
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------- */
+/* Each item wrapper with gray background */
+.item-wrapper {
+  background-color: #222222; /* darker gray */
+  border-radius: 12px;
+  padding: 8px;
+  margin: 8px 0;
+  width: 100%;
+  animation: fadeSlideUp 0.4s ease forwards;
+}
+
+/* Stagger animations for multiple items */
+.item-wrapper:nth-child(1) { animation-delay: 0s; }
+.item-wrapper:nth-child(2) { animation-delay: 0.05s; }
+.item-wrapper:nth-child(3) { animation-delay: 0.1s; }
+.item-wrapper:nth-child(4) { animation-delay: 0.15s; }
+.item-wrapper:nth-child(5) { animation-delay: 0.2s; }
+
+/* --------------------------------------------- */
+/* White card inside wrapper, minimal shadow */
+ion-item {
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    background-color: #d0f0c0; /* light Celtics green */
+  }
+}
+
+/* --------------------------------------------- */
+/* Buttons: flat minimalistic */
+ion-button {
+  width: 100%;
+  max-width: 220px;
+  --border-radius: 10px;
+  margin: 12px 0;
+  --background: #007a33;
+  --box-shadow: none;
+  --color: white;
+}
+
+/* --------------------------------------------- */
+/* Labels */
+ion-label h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+ion-label p {
+  margin: 4px 0 0 0;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* --------------------------------------------- */
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  ion-list { max-width: 90%; }
+  .item-wrapper { padding: 6px; }
+  ion-button { max-width: 90%; }
+}
+
+@media (max-width: 450px) {
+  ion-list { max-width: 95%; }
+  ion-label h2 { font-size: 1rem; }
+  ion-label p { font-size: 0.85rem; }
+}
